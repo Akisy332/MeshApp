@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>927</width>
+    <height>642</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">*{
+	font: 12pt &quot;Calibri&quot;;
+}
+#centralwidget {
+	background-color: rgb(200, 200, 200);
+}
+QTableWidget {
+	border-radius: 0px;
+}
+
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QSplitter" name="splitter">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Ignored" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <widget class="QWidget" name="layoutWidget">
+       <layout class="QVBoxLayout" name="verticalLayout_2" stretch="0">
+        <property name="leftMargin">
+         <number>5</number>
+        </property>
+        <property name="topMargin">
+         <number>5</number>
+        </property>
+        <property name="rightMargin">
+         <number>5</number>
+        </property>
+        <property name="bottomMargin">
+         <number>5</number>
+        </property>
+        <item>
+         <widget class="QSplitter" name="splitter_2">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>1</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <widget class="QWidget" name="widgetMap" native="true">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>1</horstretch>
+             <verstretch>2</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QFrame {
+	border-radius: 0px;
+   margin-top: 0px;
+	padding: 0px 0x;
+}</string>
+           </property>
+          </widget>
+          <widget class="QTextEdit" name="console">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+             <horstretch>1</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="textInteractionFlags">
+            <set>Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+           </property>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="verticalLayoutWidget">
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <property name="leftMargin">
+         <number>5</number>
+        </property>
+        <property name="topMargin">
+         <number>5</number>
+        </property>
+        <property name="rightMargin">
+         <number>5</number>
+        </property>
+        <property name="bottomMargin">
+         <number>5</number>
+        </property>
+        <item>
+         <widget class="QWidget" name="tableAbonent" native="true"/>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>927</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="defaultUp">
+    <bool>false</bool>
+   </property>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>USB</string>
+    </property>
+    <widget class="QMenu" name="menuPortList">
+     <property name="title">
+      <string>Порт</string>
+     </property>
+    </widget>
+    <addaction name="separator"/>
+    <addaction name="menuPortList"/>
+    <addaction name="action"/>
+    <addaction name="action_2"/>
+   </widget>
+   <widget class="QMenu" name="menu_3">
+    <property name="title">
+     <string>Сервер</string>
+    </property>
+    <addaction name="actionTCPOpen"/>
+    <addaction name="actionTCPClose"/>
+   </widget>
+   <widget class="QMenu" name="menuWiFi">
+    <property name="title">
+     <string>WiFi</string>
+    </property>
+    <addaction name="actionWiFiOpen"/>
+    <addaction name="actionWiFiClose"/>
+   </widget>
+   <widget class="QMenu" name="menu_4">
+    <property name="title">
+     <string>Таблица</string>
+    </property>
+    <addaction name="newSession"/>
+    <addaction name="loadSession"/>
+   </widget>
+   <widget class="QMenu" name="menu_5">
+    <property name="title">
+     <string>Файл</string>
+    </property>
+    <addaction name="actionSettings"/>
+    <addaction name="actionLoadTiles"/>
+   </widget>
+   <addaction name="menu_5"/>
+   <addaction name="menu_2"/>
+   <addaction name="menu_3"/>
+   <addaction name="menuWiFi"/>
+   <addaction name="menu_4"/>
+  </widget>
+  <action name="actionFile_1">
+   <property name="text">
+    <string>File 1</string>
+   </property>
+  </action>
+  <action name="addTable_1">
+   <property name="text">
+    <string>Участника</string>
+   </property>
+  </action>
+  <action name="addTable_2">
+   <property name="text">
+    <string>Спасателя</string>
+   </property>
+  </action>
+  <action name="addTable_3">
+   <property name="text">
+    <string>Дрона</string>
+   </property>
+  </action>
+  <action name="addTable_4">
+   <property name="text">
+    <string>Метку</string>
+   </property>
+  </action>
+  <action name="actionLoadTiles">
+   <property name="text">
+    <string>Скачать карту</string>
+   </property>
+  </action>
+  <action name="actionConsoleView">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Консоль</string>
+   </property>
+  </action>
+  <action name="actionhth">
+   <property name="text">
+    <string>hth</string>
+   </property>
+  </action>
+  <action name="action">
+   <property name="text">
+    <string>Подключиться</string>
+   </property>
+  </action>
+  <action name="action_2">
+   <property name="text">
+    <string>Отключиться</string>
+   </property>
+  </action>
+  <action name="actionTCPOpen">
+   <property name="text">
+    <string>Подключиться</string>
+   </property>
+  </action>
+  <action name="actionTCPClose">
+   <property name="text">
+    <string>Отключиться</string>
+   </property>
+  </action>
+  <action name="actionWiFiOpen">
+   <property name="text">
+    <string>Подключиться</string>
+   </property>
+  </action>
+  <action name="actionWiFiClose">
+   <property name="text">
+    <string>Отключиться</string>
+   </property>
+  </action>
+  <action name="action_3">
+   <property name="text">
+    <string>Маршрутизация</string>
+   </property>
+  </action>
+  <action name="newSession">
+   <property name="text">
+    <string>Новая запись</string>
+   </property>
+  </action>
+  <action name="loadSession">
+   <property name="text">
+    <string>Загрузить запись</string>
+   </property>
+  </action>
+  <action name="actionSettings">
+   <property name="text">
+    <string>Настройки</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>actionConsoleView</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>console</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>249</x>
+     <y>535</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
