@@ -3,6 +3,11 @@ import time
 import math
 import random
 from decimal import Decimal, ROUND_DOWN
+from dotenv import load_dotenv
+import sys
+import os
+
+
 
 def send_data_to_server(sock, data):
     try:
@@ -13,7 +18,13 @@ def send_data_to_server(sock, data):
         print(f"Ошибка: {e}")
 
 if __name__ == "__main__":
-    server_ip = ""
+    
+    load_dotenv()
+    if not os.getenv('SERVER_IP'):
+        print("Error: SERVER_IP not set in .env.local")
+        sys.exit(1)
+    
+    server_ip = os.getenv('SERVER_IP')
     server_port = 5000
     lat = 56.45205
     lon = 84.96131

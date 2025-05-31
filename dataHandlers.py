@@ -4,6 +4,7 @@ import socket
 import uuid
 import os
 from PyQt5.QtCore import QThread, pyqtSignal
+import sys
 
 
 class SerialPortWorker(QThread):
@@ -66,7 +67,8 @@ class TCPClientWorker(QThread):
 
     def __init__(self):
         super().__init__()
-        self.host = ""
+        self.host = os.getenv('SERVER_IP')
+        print(self.host)
         self.port = 5000
         self.running = True
         self.client_socket = None
